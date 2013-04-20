@@ -1,0 +1,8 @@
+-- INVOICES --
+<ul>
+  {{#each invoice in controller}}
+    <li>{{invoice.description}}</li>
+  {{else}}
+    <li>No Invoices</li>
+  {{/each}}
+</ul>
