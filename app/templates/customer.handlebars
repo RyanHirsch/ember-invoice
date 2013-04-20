@@ -1,2 +1,7 @@
-<h1>{{name}}</h1>
+{{#if isEditing}}
+  {{ view Ember.TextField valueBinding='name' }}<button {{action 'doneEditing'}}>Done</button>
+{{else}}
+  <h2>{{name}}</h2><button {{action 'startEditing'}}>Edit</button>
+{{/if}}
+{{invoiceCount}}
 {{render 'invoices' invoices}}

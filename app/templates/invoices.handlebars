@@ -1,8 +1,16 @@
--- INVOICES --
-<ul>
-  {{#each invoice in controller}}
-    <li>{{invoice.description}}</li>
-  {{else}}
-    <li>No Invoices</li>
-  {{/each}}
-</ul>
+<h3>Invoices</h3>
+<p>
+  <table class="table table-bordered table-hover">
+    <tbody>
+    {{#each invoice in controller}}
+      <tr>
+        <td>{{#linkTo 'invoice' invoice}}{{ invoice.description }}{{/linkTo}}</td>
+        <td>{{ date invoice.startDate }}</td>
+      </tr>
+    {{else}}
+      <tr><td>No Invoices</td></tr>
+    {{/each}}
+    </tbody>
+  </table>
+</p>
+{{ outlet }}
