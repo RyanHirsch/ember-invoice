@@ -6,7 +6,8 @@ I also need to start breaking apart the application code into multiple modules. 
 
 Using yeoman webapp for the base with ember-templates
 
-To run please 
+To run
+
     grunt server
 
 ## Routes
