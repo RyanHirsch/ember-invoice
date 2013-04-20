@@ -7,10 +7,12 @@ I also need to start breaking apart the application code into multiple modules. 
 ## Routes
 ### Customers
 /customers
+
 /customers/:customer_id
 
 ### Invoices
 /invoices
+
 /invoices/:invoice_id
 
 /search
