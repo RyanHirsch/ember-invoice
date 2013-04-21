@@ -1,0 +1,18 @@
+<div class="modal-header">
+  <div class="button close btn-dismiss" {{action cancel content}}>x</div>
+  <h2 class="app-icon-large">Customer</h2>
+</div>
+ 
+<div class="modal-body">
+  <div class="control-group">
+    <label class="control-label" for="customer-name">Name</label>
+    <div class="controls">
+      {{view Ember.TextField elementId='customer-name' valueBinding='content.name'}}
+    </div>
+  </div>
+</div>
+ 
+<div class="modal-footer">
+  <a class="btn btn-dark" href="#" {{action cancel content}}>Cancel</a>
+  <button class="btn btn-success" type="submit" {{action submit content}}>Save</button>
+</div>

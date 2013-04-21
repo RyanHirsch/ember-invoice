@@ -14,6 +14,8 @@ To run
 ### Customers
 /customers
 
+/customers/add
+
 /customers/:customer_id
 
 ### Invoices
@@ -21,4 +23,5 @@ To run
 
 /invoices/:invoice_id
 
+### Search
 /search
