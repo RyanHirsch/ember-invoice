@@ -16,12 +16,18 @@ App.CustomersForm = Ember.Mixin.create({
   events: {
     cancel: function(customer) {
       customer.transaction.rollback();
-      return this.transitionTo('customers');
+      if(!customer.get('name')) {
+        return this.transitionTo('customers');
+      }
+      else {
+        return this.transitionTo('customer', customer);
+      }
+      
     },
     submit: function(customer) {
       customer.get('store').commit();
       if (customer.didCreate) {
-        return this.transitionTo('customers');
+        return this.transitionTo('customer', customer);
       }
     }
   }
@@ -29,7 +35,8 @@ App.CustomersForm = Ember.Mixin.create({
 
 App.CustomersNewRoute = Ember.Route.extend(App.CustomersForm, {
   model: function() {
-    return App.Customer.createRecord();
+    var newCustomer = App.Customer.createRecord();
+    return newCustomer;
   }
 });
 
