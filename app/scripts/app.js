@@ -7,7 +7,10 @@ App.Router.map(function() {
     this.route('new');
   });
   this.resource('invoices');
-  this.resource('invoice', { path: 'invoices/:invoice_id'});
+  this.route('invoicesnew', { path: 'invocies/new' });
+  this.resource('invoice', { path: 'invoices/:invoice_id' }, function() {
+    this.route('edit');
+  });
 });
 
 Ember.Handlebars.registerBoundHelper('date', function(dateObj) {

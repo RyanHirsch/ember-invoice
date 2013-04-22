@@ -1,0 +1,11 @@
+<form>
+  <fieldset>
+    <legend>New Invoice</legend>
+    <label>Description</label>
+    {{view Ember.TextField elementId='invoice-description' valueBinding='content.description'}}
+    <div>
+      <a href='#' class='btn' {{ action cancel content}}>Cancel</a>
+      <a href='#' class='btn' {{ action submit content}}>Submit</a>
+    </div>
+  </fieldset>
+</form>
